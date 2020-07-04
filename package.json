@@ -1,0 +1,19 @@
+{
+  "name": "longcat",
+  "version": "0.0.1",
+  "description": "It's another discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/massette/longcat.git"
+  },
+  "author": "massette",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/massette/longcat/issues"
+  },
+  "homepage": "https://github.com/massette/longcat#readme"
+}
