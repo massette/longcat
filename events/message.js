@@ -7,6 +7,8 @@ exports.run = function(config,commands,client,message) {
 	const command = args.shift().toLowerCase();
 	
 	
-	if (command === "help") commands["help"].run(config,commands,client,args);
-	else if (commands.keys.includes(command)) commands[command].run(config,client,args);
+	if (command === "help") commands["help"].run(config,commands,client,message,args);
+	else if (commands.commands.includes(command)) {
+		if (message.guild || commands[command].dms) commands[command].run(config,client,message,args);
+	}
 }

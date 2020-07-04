@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/massette/longcat#readme",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "better-sqlite3": "^7.1.0",
+    "discord.js": "^12.2.0",
+    "node-gyp": "^7.0.0"
   }
 }
