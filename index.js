@@ -1,14 +1,16 @@
-const config  = require("./config.json");
-
 const DISCORD = require("discord.js");
 const FS      = require("fs");
 const SQLITE  = require("better-sqlite3");
 
 const client  = new DISCORD.Client();
-const sql     = new SQLITE("./data.sqlite");
+const sql  = new SQLITE("./data.sqlite");
 
 let commands = {};
 commands.types = [];
+
+
+if (!process.env.PRODUCTION) console.log("Running Locally...")
+
 
 
 FS.readdir("./commands/", function(err,files) {
@@ -48,8 +50,8 @@ FS.readdir("./events/", function(err,files) {
 	files.forEach(function(f) {
 		let event = require("./events/" + f)
 		
-		if (event.name === "message") client.on(event.name, (...args) => event.run(config,commands,client, ...args));
-		else { client.on(event.name, (...args) => event.run(config,client, ...args)); }
+		if (event.name === "message") client.on(event.name, (...args) => event.run(sql,commands,client, ...args));
+		else { client.on(event.name, (...args) => event.run(sql,client, ...args)); }
 	})
 })
 

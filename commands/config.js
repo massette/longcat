@@ -9,6 +9,9 @@ exports.info.aliases = ["set"]
 exports.dms        = true;
 
 
-exports.run = function(config,client,message,args) {
-	message.channel.send("https://anidiots.guide/coding-guides/sqlite-based-points-system");
+exports.run = function(guildconfig,userconfig,client,message,args) {
+	message.channel.send("Did thing.");
+
+	guildconfig.prefix = "--";
+	client.setGuildConfig.run(guildconfig);
 }
