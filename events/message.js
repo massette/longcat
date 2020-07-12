@@ -28,6 +28,6 @@ exports.run = function(sql,commands,client,message) {
 	
 	if (command === "help") commands["help"].run(guildconfig,userconfig,commands,client,message,args);
 	else if (commands.commands.includes(command)) {
-		if (message.guild || commands[command].dms) commands[command].run(guidlconfig,userconfig,client,message,args);
+		if (message.guild || commands[command].dms) commands[command].run(guildconfig,userconfig,client,message,args);
 	}
 }
